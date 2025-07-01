@@ -5,7 +5,7 @@ from cosyvoice.cli.cosyvoice import CosyVoice, CosyVoice2
 from cosyvoice.utils.file_utils import load_wav
 import torchaudio
 
-cosyvoice = CosyVoice('/home/system/CosyVoice/pretrained_models/CosyVoice-300M', load_jit=False, load_trt=False, fp16=False)
+cosyvoice = CosyVoice('/home/system/CosyVoice/pretrained_models/CosyVoice-300M-Instruct', load_jit=False, load_trt=False, fp16=False)
 
 # NOTE if you want to reproduce the results on https://funaudiollm.github.io/cosyvoice2, please add text_frontend=False during inference
 # zero_shot usage
