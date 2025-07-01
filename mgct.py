@@ -13,7 +13,7 @@ s2a_1layer_ckpt = "/home/system/MaskGCT/s2a_model/s2a_model_1layer/model.safeten
 s2a_full_ckpt = "/home/system/MaskGCT/s2a_model/s2a_model_full/model.safetensors"
 
 import sys
-sys.path.append('/home/system/MaskGCT/Amphion')
+#sys.path.append('/home/system/MaskGCT/Amphion')
 
 from models.tts.maskgct.maskgct_utils import *
 import safetensors
