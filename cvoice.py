@@ -24,5 +24,5 @@ for i, j in enumerate(cosyvoice.inference_vc(source_speech_16k, prompt_speech_16
 """
 #cosyvoice = CosyVoice('../CosyVoice/pretrained_models/CosyVoice-300M-Instruct', load_jit=False, load_trt=False, fp16=False)
 # instruct usage, support <laughter></laughter><strong></strong>[laughter][breath]
-for i, j in enumerate(cosyvoice.inference_instruct('<strong>Hey babe</strong> how are you doing, so can you like umm... [laughter] help me write a birthday message for my sister? I\'m terrible with words and want to say something meaningful. but i keep drawing a blank.', 'seductive', 'Theo \'Crimson\', is a fiery, passionate rebel leader. Fights with fervor for justice, but struggles with impulsiveness.', stream=False)):
+for i, j in enumerate(cosyvoice.inference_instruct('<strong>Hey babe</strong> how are you doing, so can you like umm... [laughter] help me write a birthday message for my sister? I\'m terrible with words and want to say something meaningful. but i keep drawing a blank.', 'American woman', 'Theo \'Crimson\', is a fiery, passionate rebel leader. Fights with fervor for justice, but struggles with impulsiveness.', stream=False)):
     torchaudio.save('cvoice_instruct_{}.wav'.format(i), j['tts_speech'], cosyvoice.sample_rate)
