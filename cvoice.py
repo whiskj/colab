@@ -1,7 +1,7 @@
 import sys
 sys.path.append('third_party/Matcha-TTS')
-from ../CosyVoice/cosyvoice.cli.cosyvoice import CosyVoice, CosyVoice2
-from ../CosyVoice/cosyvoice.utils.file_utils import load_wav
+from ..CosyVoice.cosyvoice.cli.cosyvoice import CosyVoice, CosyVoice2
+from ..CosyVoice.cosyvoice.utils.file_utils import load_wav
 import torchaudio
 
 cosyvoice = CosyVoice('../CosyVoice/pretrained_models/CosyVoice-300M', load_jit=False, load_trt=False, fp16=False)
