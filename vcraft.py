@@ -23,8 +23,8 @@ voicecraft_name="830M_TTSEnhanced.pth" # or giga330M.pth, 330M_TTSEnhanced.pth, 
 
 # the new way of loading the model, with huggingface, recommended
 from models import voicecraft
-#model = voicecraft.VoiceCraft.from_pretrained(f"pyp1/VoiceCraft_{voicecraft_name.replace('.pth', '')}")
-model = voicecraft.VoiceCraft.from_pretrained(f"/home/system/VoiceCraftModels/{voicecraft_name}")
+model = voicecraft.VoiceCraft.from_pretrained(f"pyp1/VoiceCraft_{voicecraft_name.replace('.pth', '')}")
+#model = voicecraft.VoiceCraft.from_pretrained(f"/home/system/VoiceCraftModels/{voicecraft_name}")
 phn2num = model.args.phn2num
 config = vars(model.args)
 model.to(device)
