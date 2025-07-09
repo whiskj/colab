@@ -48,7 +48,7 @@ with open(f"{temp_folder}/{filename}.txt", "w") as f:
     f.write(orig_transcript)
 # run MFA to get the alignment
 align_temp = f"{temp_folder}/mfa_alignments"
-os.system(f"source ~/.bashrc && conda activate voicecraft && mfa align -v --clean -j 1 --output_format csv {temp_folder} english_us_arpa english_us_arpa {align_temp}")
+#os.system(f"source ~/.bashrc && conda activate voicecraft && mfa align -v --clean -j 1 --output_format csv {temp_folder} english_us_arpa english_us_arpa {align_temp}")
 
 # # if the above fails, it could be because the audio is too hard for the alignment model, increasing the beam size usually solves the issue
 # !source ~/.bashrc && \
@@ -57,7 +57,7 @@ os.system(f"source ~/.bashrc && conda activate voicecraft && mfa align -v --clea
 #         english_us_arpa english_us_arpa {align_temp} --beam 1000 --retry_beam 2000
 
 # take a look at demo/temp/mfa_alignment, decide which part of the audio to use as prompt
-cut_off_sec = 7 # NOTE: according to forced-alignment file demo/temp/mfa_alignments/5895_34622_000026_000002.wav, the word "strength" stop as 3.561 sec, so we use first 3.6 sec as the prompt. this should be different for different audio
+cut_off_sec = 6.08 # NOTE: according to forced-alignment file demo/temp/mfa_alignments/5895_34622_000026_000002.wav, the word "strength" stop as 3.561 sec, so we use first 3.6 sec as the prompt. this should be different for different audio
 target_transcript = "Huge thanks to Asmongold for somehow finding my video and then reacting to it, and to everyone who's here now because of that. I'm truly brand new to YouTube, and I didn't expect this video to receive any attention at all, much less become an instant sensation. But here we are. Before this, it was just me and my 300 Spartans holding onto the comments section, and now it seems like we've been swarmed by roaches—literally!"
 # NOTE: 3 sec of reference is generally enough for high quality voice cloning, but longer is generally better, try e.g. 3~6 sec.
 audio_fn = f"{temp_folder}/{filename}.wav"
